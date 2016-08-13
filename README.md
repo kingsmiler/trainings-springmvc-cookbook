@@ -1,0 +1,1 @@
+# trainings-springmvc-cookbook
