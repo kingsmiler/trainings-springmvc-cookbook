@@ -1,22 +1,20 @@
 package edu.zipcloud.cloudstreetmarket.portal.conf.beetl;
 
-import org.beetl.core.ResourceLoader;
-import org.beetl.core.resource.ClasspathResourceLoader;
-import org.beetl.core.resource.WebAppResourceLoader;
 import org.beetl.ext.spring.BeetlGroupUtilConfiguration;
 import org.beetl.ext.spring.BeetlSpringViewResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 
 @Configuration
 public class BeetlBeanConfig {
-
+    @Value("${beetl.content-type}")
     private String contentType = "text/html;charset=UTF-8";
-    private String prefix = "/WEB-INF/templates";
+    @Value("${beetl.prefix}")
+    private String prefix;
+    @Value("${beetl.suffix}")
     private String suffix = ".html";
-
 
     @Bean(initMethod = "init")
     public BeetlGroupUtilConfiguration beetlConfig() {
