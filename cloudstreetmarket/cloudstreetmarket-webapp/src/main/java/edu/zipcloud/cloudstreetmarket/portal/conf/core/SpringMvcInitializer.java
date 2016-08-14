@@ -10,7 +10,9 @@ public class SpringMvcInitializer extends
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{};
+        return new Class[]{
+            SpringRootConfig.class
+        };
     }
 
     @Override

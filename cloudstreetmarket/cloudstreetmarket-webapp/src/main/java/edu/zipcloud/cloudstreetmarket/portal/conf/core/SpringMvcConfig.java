@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("edu.zipcloud.cloudstreetmarket.portal.web")
+@ComponentScan({"edu.zipcloud.cloudstreetmarket.portal.web"})
 @Import({BeetlBeanConfig.class})
 @PropertySource({
         "classpath:application.properties"
@@ -59,6 +59,7 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/static/");
     }
 
     @Bean
